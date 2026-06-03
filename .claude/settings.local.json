@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\PC\\\\OneDrive - sonardd.com.br\\\\Documentos\\\\App Lari\" -Force)",
+      "Bash(Select-Object -First 20)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "PowerShell(choco install nodejs -y)",
+      "PowerShell($ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri \"https://nodejs.org/dist/v20.11.1/node-v20.11.1-x64.msi\" -OutFile \"$env:TEMP\\\\node-installer.msi\"; Start-Process -FilePath \"$env:TEMP\\\\node-installer.msi\" -ArgumentList \"/quiet /norestart\" -Wait; node --version)",
+      "PowerShell($env:Path -split ';' | Where-Object { $_ -match 'nodejs|node' } | Select-Object -First 5)",
+      "Bash(npm --version)",
+      "Bash(curl -s http://localhost:3000)"
+    ]
+  }
+}
