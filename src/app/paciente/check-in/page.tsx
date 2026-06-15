@@ -18,6 +18,8 @@ export default function CheckInPage() {
     notes: '',
   });
 
+  type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -81,7 +83,7 @@ export default function CheckInPage() {
                 min="0"
                 max="10"
                 value={formData.mood}
-                onChange={e => setFormData({ ...formData, mood: e.target.value })}
+                onChange={(e: ChangeEvent) => setFormData({ ...formData, mood: e.target.value })}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
               />
               <div className="flex justify-between text-xs text-slate-600 mt-2">
