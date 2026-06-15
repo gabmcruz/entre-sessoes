@@ -9,6 +9,8 @@ import { tasks } from '@/lib/mock-data';
 import { CheckCircle2, Clock } from 'lucide-react';
 
 export default function TarefaPage() {
+  type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+
   const [showForm, setShowForm] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -95,7 +97,7 @@ export default function TarefaPage() {
                 <TextArea
                   label="1. Qual foi a situação?"
                   value={formData.situation}
-                  onChange={e => setFormData({ ...formData, situation: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, situation: e.target.value })}
                   placeholder="Descreva a situação de forma concreta e objetiva"
                   rows={3}
                   required
@@ -104,7 +106,7 @@ export default function TarefaPage() {
                 <Input
                   label="2. Que emoção apareceu?"
                   value={formData.emotion}
-                  onChange={e => setFormData({ ...formData, emotion: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, emotion: e.target.value })}
                   placeholder="Ex: ansiedade, tristeza, raiva, culpa"
                   required
                 />
@@ -118,7 +120,7 @@ export default function TarefaPage() {
                     min="0"
                     max="10"
                     value={formData.emotionIntensity}
-                    onChange={e => setFormData({ ...formData, emotionIntensity: e.target.value })}
+                    onChange={(e: ChangeEvent) => setFormData({ ...formData, emotionIntensity: e.target.value })}
                     className="w-full h-2 bg-slate-200 rounded-lg"
                   />
                 </div>
@@ -126,7 +128,7 @@ export default function TarefaPage() {
                 <TextArea
                   label="4. Que pensamento passou pela sua cabeça?"
                   value={formData.thought}
-                  onChange={e => setFormData({ ...formData, thought: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, thought: e.target.value })}
                   placeholder="O pensamento automático que surgiu"
                   rows={3}
                   required
@@ -135,7 +137,7 @@ export default function TarefaPage() {
                 <TextArea
                   label="5. Que evidências apoiam esse pensamento?"
                   value={formData.supportingEvidence}
-                  onChange={e => setFormData({ ...formData, supportingEvidence: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, supportingEvidence: e.target.value })}
                   placeholder="Fatos que parecem confirmar o pensamento"
                   rows={3}
                   required
@@ -144,7 +146,7 @@ export default function TarefaPage() {
                 <TextArea
                   label="6. Que evidências mostram outra possibilidade?"
                   value={formData.contradictingEvidence}
-                  onChange={e => setFormData({ ...formData, contradictingEvidence: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, contradictingEvidence: e.target.value })}
                   placeholder="Fatos ou argumentos que contradizem o pensamento"
                   rows={3}
                   required
@@ -153,7 +155,7 @@ export default function TarefaPage() {
                 <TextArea
                   label="7. Qual pensamento alternativo mais equilibrado?"
                   value={formData.alternativeThought}
-                  onChange={e => setFormData({ ...formData, alternativeThought: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, alternativeThought: e.target.value })}
                   placeholder="Um pensamento mais realista e menos catastrofista"
                   rows={3}
                   required
@@ -162,7 +164,7 @@ export default function TarefaPage() {
                 <TextArea
                   label="8. Que pequena ação você pode escolher agora?"
                   value={formData.action}
-                  onChange={e => setFormData({ ...formData, action: e.target.value })}
+                  onChange={(e: ChangeEvent) => setFormData({ ...formData, action: e.target.value })}
                   placeholder="Uma ação concreta e realizável"
                   rows={3}
                   required

@@ -7,6 +7,8 @@ import { Input, TextArea } from '@/components/Input';
 import { SuccessBanner } from '@/components/SuccessBanner';
 
 export default function RegistroPage() {
+  type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     situation: '',
@@ -80,7 +82,7 @@ export default function RegistroPage() {
             <TextArea
               label="Qual foi a situação?"
               value={formData.situation}
-              onChange={e => setFormData({ ...formData, situation: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, situation: e.target.value })}
               placeholder="Descreva a situação"
               rows={3}
               required
@@ -89,7 +91,7 @@ export default function RegistroPage() {
             <Input
               label="Que emoção apareceu?"
               value={formData.emotion}
-              onChange={e => setFormData({ ...formData, emotion: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, emotion: e.target.value })}
               placeholder="Ex: ansiedade, tristeza, raiva, culpa"
               required
             />
@@ -103,7 +105,7 @@ export default function RegistroPage() {
                 min="0"
                 max="10"
                 value={formData.emotionIntensity}
-                onChange={e => setFormData({ ...formData, emotionIntensity: e.target.value })}
+                onChange={(e: ChangeEvent) => setFormData({ ...formData, emotionIntensity: e.target.value })}
                 className="w-full h-2 bg-slate-200 rounded-lg"
               />
             </div>
@@ -111,7 +113,7 @@ export default function RegistroPage() {
             <TextArea
               label="Que pensamento passou pela sua cabeça?"
               value={formData.thought}
-              onChange={e => setFormData({ ...formData, thought: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, thought: e.target.value })}
               placeholder="O pensamento automático"
               rows={3}
               required
@@ -120,7 +122,7 @@ export default function RegistroPage() {
             <TextArea
               label="Que evidências apoiam esse pensamento?"
               value={formData.supportingEvidence}
-              onChange={e => setFormData({ ...formData, supportingEvidence: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, supportingEvidence: e.target.value })}
               placeholder="Fatos que parecem confirmar"
               rows={3}
             />
@@ -128,7 +130,7 @@ export default function RegistroPage() {
             <TextArea
               label="Que evidências mostram outra possibilidade?"
               value={formData.contradictingEvidence}
-              onChange={e => setFormData({ ...formData, contradictingEvidence: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, contradictingEvidence: e.target.value })}
               placeholder="Fatos que contradizem o pensamento"
               rows={3}
             />
@@ -136,7 +138,7 @@ export default function RegistroPage() {
             <TextArea
               label="Qual pensamento alternativo?"
               value={formData.alternativeThought}
-              onChange={e => setFormData({ ...formData, alternativeThought: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, alternativeThought: e.target.value })}
               placeholder="Um pensamento mais realista"
               rows={3}
             />
@@ -144,7 +146,7 @@ export default function RegistroPage() {
             <TextArea
               label="Que ação você pode tomar?"
               value={formData.action}
-              onChange={e => setFormData({ ...formData, action: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, action: e.target.value })}
               placeholder="Uma ação concreta"
               rows={3}
             />

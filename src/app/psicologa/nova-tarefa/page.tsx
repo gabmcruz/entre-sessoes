@@ -9,6 +9,8 @@ import { SuccessBanner } from '@/components/SuccessBanner';
 import { patients } from '@/lib/mock-data';
 
 export default function NovaTarefaPage() {
+  type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+
   const searchParams = useSearchParams();
   const patientIdFromUrl = searchParams.get('patientId');
 
@@ -71,7 +73,7 @@ export default function NovaTarefaPage() {
             <Select
               label="Selecionar paciente"
               value={formData.patientId}
-              onChange={e => setFormData({ ...formData, patientId: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, patientId: e.target.value })}
               options={patients.map(p => ({ value: p.id, label: p.name }))}
               required
             />
@@ -80,7 +82,7 @@ export default function NovaTarefaPage() {
             <Select
               label="Tipo de exercício"
               value={formData.type}
-              onChange={e => setFormData({ ...formData, type: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, type: e.target.value })}
               options={taskTypes}
               required
             />
@@ -89,7 +91,7 @@ export default function NovaTarefaPage() {
             <TextArea
               label="Instrução personalizada (opcional)"
               value={formData.instruction}
-              onChange={e => setFormData({ ...formData, instruction: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, instruction: e.target.value })}
               placeholder="Adicione contexto específico do paciente ou ajustes à tarefa padrão"
               rows={5}
             />
@@ -99,7 +101,7 @@ export default function NovaTarefaPage() {
               label="Prazo para resposta"
               type="date"
               value={formData.dueDate}
-              onChange={e => setFormData({ ...formData, dueDate: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, dueDate: e.target.value })}
               required
             />
 
