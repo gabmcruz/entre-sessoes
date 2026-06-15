@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/Card';
 import { checkIns, tasks, freeRegistrations } from '@/lib/mock-data';
-import { CheckCircle2, AlertCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 export default function ProgressoPage() {
   const patientCheckIns = checkIns.filter(c => c.patientId === 'patient-1');
@@ -64,7 +64,7 @@ export default function ProgressoPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {patientCheckIns.map((checkin, idx) => (
+              {patientCheckIns.map((checkin) => (
                 <div key={checkin.id} className="flex items-center gap-4">
                   <div className="w-24 text-sm text-slate-600">
                     {new Date(checkin.date).toLocaleDateString('pt-BR')}
@@ -91,7 +91,7 @@ export default function ProgressoPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {patientCheckIns.map((checkin, idx) => (
+              {patientCheckIns.map((checkin) => (
                 <div key={checkin.id} className="flex items-center gap-4">
                   <div className="w-24 text-sm text-slate-600">
                     {new Date(checkin.date).toLocaleDateString('pt-BR')}

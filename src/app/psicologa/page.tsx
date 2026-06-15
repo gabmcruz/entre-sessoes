@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { patients, checkIns, tasks } from '@/lib/mock-data';
-import { Users, AlertCircle, CheckCircle2, TrendingUp } from 'lucide-react';
 
 export default function PsicologaPage() {
   const activePatients = patients.length;
