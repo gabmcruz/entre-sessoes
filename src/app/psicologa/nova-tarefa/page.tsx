@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/Card';
 import { Button } from '@/components/Button';
@@ -8,9 +8,9 @@ import { Input, TextArea, Select } from '@/components/Input';
 import { SuccessBanner } from '@/components/SuccessBanner';
 import { patients } from '@/lib/mock-data';
 
-export default function NovaTarefaPage() {
-  type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
 
+function NovaTarefaForm() {
   const searchParams = useSearchParams();
   const patientIdFromUrl = searchParams.get('patientId');
 
@@ -69,7 +69,6 @@ export default function NovaTarefaPage() {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Patient Selection */}
             <Select
               label="Selecionar paciente"
               value={formData.patientId}
@@ -78,7 +77,6 @@ export default function NovaTarefaPage() {
               required
             />
 
-            {/* Task Type */}
             <Select
               label="Tipo de exercício"
               value={formData.type}
@@ -87,7 +85,6 @@ export default function NovaTarefaPage() {
               required
             />
 
-            {/* Instructions */}
             <TextArea
               label="Instrução personalizada (opcional)"
               value={formData.instruction}
@@ -96,7 +93,6 @@ export default function NovaTarefaPage() {
               rows={5}
             />
 
-            {/* Due Date */}
             <Input
               label="Prazo para resposta"
               type="date"
@@ -112,7 +108,6 @@ export default function NovaTarefaPage() {
         </CardContent>
       </Card>
 
-      {/* Info */}
       <Card className="mt-8 bg-blue-50 border-blue-200">
         <CardHeader>
           <CardTitle className="text-base">Dica de personalização</CardTitle>
@@ -125,5 +120,13 @@ export default function NovaTarefaPage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+export default function NovaTarefaPage() {
+  return (
+    <Suspense fallback={<div className="max-w-2xl mx-auto p-8 text-slate-500">Carregando...</div>}>
+      <NovaTarefaForm />
+    </Suspense>
   );
 }

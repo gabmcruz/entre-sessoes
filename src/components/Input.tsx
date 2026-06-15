@@ -22,10 +22,9 @@ export function Input({ label, error, helper, className = '', ...props }: InputP
   );
 }
 
-interface TextAreaProps extends Omit<React.TextAreaHTMLAttributes<HTMLTextAreaElement>, 'value'> {
+interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   error?: string;
-  value?: string | number;
 }
 
 export function TextArea({ label, error, className = '', ...props }: TextAreaProps) {
