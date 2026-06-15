@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/Card';
 import { Button } from '@/components/Button';
-import { Input, TextArea, Select } from '@/components/Input';
+import { TextArea, Select } from '@/components/Input';
 import { SuccessBanner } from '@/components/SuccessBanner';
 import { emotions } from '@/lib/mock-data';
 
