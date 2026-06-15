@@ -25,6 +25,7 @@ export function Input({ label, error, helper, className = '', ...props }: InputP
 interface TextAreaProps extends React.TextAreaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   error?: string;
+  value?: string | number | readonly string[];
 }
 
 export function TextArea({ label, error, className = '', ...props }: TextAreaProps) {
