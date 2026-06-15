@@ -102,7 +102,7 @@ export default function CheckInPage() {
                 min="0"
                 max="10"
                 value={formData.anxiety}
-                onChange={e => setFormData({ ...formData, anxiety: e.target.value })}
+                onChange={(e: ChangeEvent) => setFormData({ ...formData, anxiety: e.target.value })}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
               />
               <div className="flex justify-between text-xs text-slate-600 mt-2">
@@ -121,7 +121,7 @@ export default function CheckInPage() {
                 min="0"
                 max="10"
                 value={formData.energy}
-                onChange={e => setFormData({ ...formData, energy: e.target.value })}
+                onChange={(e: ChangeEvent) => setFormData({ ...formData, energy: e.target.value })}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
               />
               <div className="flex justify-between text-xs text-slate-600 mt-2">
@@ -134,7 +134,7 @@ export default function CheckInPage() {
             <Select
               label="Qualidade do seu sono na última noite"
               value={formData.sleep}
-              onChange={e => setFormData({ ...formData, sleep: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, sleep: e.target.value })}
               options={sleepOptions}
               required
             />
@@ -143,7 +143,7 @@ export default function CheckInPage() {
             <Select
               label="Emoção predominante"
               value={formData.emotion}
-              onChange={e => setFormData({ ...formData, emotion: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, emotion: e.target.value })}
               options={emotions}
               required
             />
@@ -152,7 +152,7 @@ export default function CheckInPage() {
             <TextArea
               label="O que mais marcou sua semana?"
               value={formData.notes}
-              onChange={e => setFormData({ ...formData, notes: e.target.value })}
+              onChange={(e: ChangeEvent) => setFormData({ ...formData, notes: e.target.value })}
               placeholder="Descreva brevemente (opcional)"
               rows={4}
             />

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { materials } from '@/lib/mock-data';
-import { FileText, Headphones, BookOpen, MoreHorizontal, X } from 'lucide-react';
+import { FileText, Headphones, BookOpen, X } from 'lucide-react';
 
 export default function MateriaisPage() {
   const [selectedMaterial, setSelectedMaterial] = useState<string | null>(null);

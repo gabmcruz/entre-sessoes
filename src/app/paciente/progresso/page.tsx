@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/Card';
 import { checkIns, tasks, freeRegistrations } from '@/lib/mock-data';
-import { TrendingUp, CheckCircle2, AlertCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function ProgressoPage() {
   const patientCheckIns = checkIns.filter(c => c.patientId === 'patient-1');

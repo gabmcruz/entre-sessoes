@@ -10,7 +10,6 @@ import { Calendar, CheckCircle2, Smile, FileText, BookOpen, TrendingUp } from 'l
 export default function PacientePage() {
   const lastWeekCheckIns = checkIns.slice(0, 3);
   const currentTask = tasks.find(t => t.patientId === 'patient-1' && t.status === 'pending');
-  const lastMood = lastWeekCheckIns[0]?.mood || 6;
 
   const getAverageMood = () => {
     return lastWeekCheckIns.length > 0
